@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <!-- <p>is signed in: {{ isSignedIn }}</p>
+    <button @click="signIn">Sign in</button> -->
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -34,10 +36,30 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { CLIENT_ID, API_KEY } from '../secrets.ts';
 
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+
+  // private isSignedIn = false;
+  // private gapi: any = null;
+
+  // private readonly DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+  // private readonly SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
+
+  // mounted() {
+  //   this.gapi = window.gapi;
+  //   this.setIsSignedIn();
+  // }
+
+  // setIsSignedIn() {
+  //   this.isSignedIn = this.gapi.auth2.getAuthInstance().isSignedIn.get();
+  // }
+
+  // async signIn() {
+  //   this.gapi.auth2.getAuthInstance().signIn()
+  // }
 }
 </script>
 
